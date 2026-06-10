@@ -1,0 +1,27 @@
+# ---- data files (synced separately, not via git) ----
+# Snowfall source grids — large; ship via cloud/scp or re-download.
+sfav2_*.nc
+*.nc
+# Regenerable combined HUC-8 overlay cache (62 MB; rebuilt from huc8_shp/ on first use).
+ca_huc8_combined.geojson
+# Watershed source data (point WXAGENT_HUC8_DIR / WXAGENT_HUC8_CSV at these).
+huc8_shp/
+ca_huc8_watersheds.csv
+# Keep the small bundled state-boundary overlay that the renderers depend on:
+!us_states.geojson
+
+# ---- generated / scratch ----
+*.zip
+autosnow.png
+__pycache__/
+*.pyc
+_backup_phase1/
+_backup_phase1_6/
+
+# ---- OS / editor ----
+.DS_Store
+.vscode/
+.idea/
+
+# ---- Claude Code local (machine-specific) ----
+.claude/settings.local.json

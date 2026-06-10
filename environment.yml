@@ -1,0 +1,19 @@
+# Recreate the project env on another machine:
+#   conda env create -f environment.yml
+#   conda activate wxagent
+#
+# Only python + the eccodes C library come from conda (eccodes is needed by
+# cfgrib for the QPF app's GRIB2 reading and is painful to install via pip alone).
+# Everything else is pip, mirroring the original env. If the geospatial pip wheels
+# (cartopy/geopandas/pyproj/shapely) give you trouble on a non-mac platform, the
+# robust alternative is to install them from conda-forge instead of pip.
+name: wxagent
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - eccodes
+  - pip
+  - pip:
+      - -r requirements.txt

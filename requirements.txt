@@ -1,0 +1,26 @@
+# Pinned to the versions in the working `wxagent` env (2026-06-09).
+# Used by environment.yml; also works standalone in a plain venv:
+#   python3.12 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
+# (the QPF app additionally needs the eccodes C library — see environment.yml.)
+
+# web service
+fastapi==0.136.3
+uvicorn==0.49.0
+
+# scientific core
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.0.3
+matplotlib==3.10.9
+netCDF4==1.7.4
+pydantic==2.13.4
+
+# geospatial
+shapely==2.1.2
+geopandas==1.1.3
+cartopy==0.25.0
+pyproj==3.7.2
+
+# GRIB (QPF verification app only)
+cfgrib==0.9.15.1
+eccodes==2.47.0
